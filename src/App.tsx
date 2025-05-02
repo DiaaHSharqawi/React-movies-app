@@ -1,5 +1,11 @@
+import Header from "./modules/shared/components/header/Header";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
