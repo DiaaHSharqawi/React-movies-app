@@ -1,10 +1,11 @@
+import "swiper/swiper-bundle.css";
+
 import HeroSection from "./components/heroSection/HeroSection";
 
 function Home() {
   return (
     <>
       <HeroSection />
-      <h1>Home</h1>
     </>
   );
 }
