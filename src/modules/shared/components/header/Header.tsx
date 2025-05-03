@@ -1,8 +1,8 @@
 import AppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
-import Container from "@mui/system/Container";
 import HeaderActions from "./HeaderActions";
-import HeaderLogo from "./HeaderLogo";
+import HeaderLogo from "./HeaderLogo.tsx";
 
 function Header() {
   return (
@@ -15,6 +15,7 @@ function Header() {
           </Toolbar>
         </Container>
       </AppBar>
+      <Toolbar sx={{ my: 2 }} />
     </>
   );
 }

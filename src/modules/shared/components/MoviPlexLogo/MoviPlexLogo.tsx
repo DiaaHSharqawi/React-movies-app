@@ -20,18 +20,16 @@ function MoviPlexLogo() {
       <Typography variant="h4" component={"h1"}>
         {logoTextParts.map((textPart) => {
           return (
-            <>
-              <Box
-                component={"span"}
-                sx={{
-                  color: textPart.color,
-                  fontWeight: "bold",
-                }}
-                key={textPart.partName}
-              >
-                {textPart.partName}
-              </Box>
-            </>
+            <Box
+              component={"span"}
+              sx={{
+                color: textPart.color,
+                fontWeight: "bold",
+              }}
+              key={textPart.partName}
+            >
+              {textPart.partName}
+            </Box>
           );
         })}
       </Typography>
