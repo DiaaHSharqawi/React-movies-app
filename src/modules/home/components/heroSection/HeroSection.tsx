@@ -1,4 +1,4 @@
-import { Stack } from "@mui/system";
+import { Box, Stack } from "@mui/system";
 import { useQuery } from "@tanstack/react-query";
 import { BeatLoader } from "react-spinners";
 import { fetchTrendingMovies } from "../../services/fetchTrendingMovies";
@@ -29,7 +29,13 @@ function HeroSection() {
   }
 
   return (
-    <>{trendingMovies && <HeroSwiper trendingMovies={trendingMovies} />}</>
+    <>
+      {trendingMovies && (
+        <Box component={"section"}>
+          <HeroSwiper trendingMovies={trendingMovies} />
+        </Box>
+      )}
+    </>
   );
 }
 
