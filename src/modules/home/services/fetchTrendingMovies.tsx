@@ -31,6 +31,7 @@ export type TrendingMoviesMapped = {
   title: string;
   voteAverage: number;
   video: boolean;
+  releaseDate: string;
 };
 
 const trendingMoviesMapper = {
@@ -39,6 +40,7 @@ const trendingMoviesMapper = {
   title: "title",
   vote_average: "voteAverage",
   video: "video",
+  release_date: "releaseDate",
 };
 
 export const fetchTrendingMovies = async (

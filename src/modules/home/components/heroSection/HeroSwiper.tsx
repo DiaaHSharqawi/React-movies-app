@@ -1,8 +1,8 @@
 import { Navigation, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { TrendingMoviesMapped } from "../../services/fetchTrendingMovies";
 import HeroTrendingMovieSlide from "./HeroTrendingMovieSlide";
+import "./heroSwiper.module.css";
 
 function HeroSwiper({
   trendingMovies,
@@ -15,7 +15,7 @@ function HeroSwiper({
         slidesPerView={1}
         spaceBetween={15}
         virtual={true}
-        navigation={true}
+        navigation={{}}
         modules={[Navigation, Virtual]}
         className="mySwiper"
         effect="slide"

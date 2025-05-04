@@ -1,0 +1,8 @@
+:root {
+  --swiper-theme-color: #fff;
+  --swiper-navigation-sides-offset: 3em;
+}
+
+.swiper-button-prev {
+  margin: auto !important;
+}
