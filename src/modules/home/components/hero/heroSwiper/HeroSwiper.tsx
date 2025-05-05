@@ -1,14 +1,14 @@
 import { Navigation, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TrendingMoviesMapped } from "../../services/fetchTrendingMovies";
-import HeroTrendingMovieSlide from "./HeroTrendingMovieSlide";
+import { TrendingMoviesMapped } from "../../../services/fetchTrendingMovies";
+import HeroTrendingMovieSlide from "../heroTrendingMovieSlide/HeroTrendingMovieSlide";
 import "./heroSwiper.module.css";
 
-function HeroSwiper({
-  trendingMovies,
-}: {
+type HeroSwiperProps = {
   trendingMovies: TrendingMoviesMapped[];
-}) {
+};
+
+function HeroSwiper({ trendingMovies }: HeroSwiperProps) {
   return (
     <>
       <Swiper

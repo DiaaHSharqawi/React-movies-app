@@ -1,20 +1,23 @@
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import StarIcon from "@mui/icons-material/Star";
-
-import { Stack, styled } from "@mui/system";
+import { Stack, StackProps, styled } from "@mui/system";
 import PopularMovieDetailChip from "./PopularMovieDetailChip";
 
-export const PopularMovieCardDetailsContainer = styled(Stack, {
-  shouldForwardProp: (prop) => prop != "backdropURL",
-})(({ backdropURL }: { backdropURL: string }) => ({
-  background: `url(${backdropURL}) no-repeat center / cover`,
-  width: "100%",
-  height: "380px",
-  borderRadius: "1rem",
-  cursor: "pointer",
-  justifyContent: "end",
-  padding: "16px",
-}));
+type PopularMovieCardDetailsContainerProps = StackProps & {
+  backdropURL: string;
+};
+
+export const PopularMovieCardDetailsContainer = styled(Stack)(
+  ({ backdropURL }: PopularMovieCardDetailsContainerProps) => ({
+    background: `url(${backdropURL}) no-repeat center / cover`,
+    width: "100%",
+    height: "380px",
+    borderRadius: "1rem",
+    cursor: "pointer",
+    justifyContent: "end",
+    padding: "16px",
+  })
+);
 
 export const StyledMovieVoteAverageDetailChip = styled(PopularMovieDetailChip)(
   () => ({
