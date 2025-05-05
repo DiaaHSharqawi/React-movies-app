@@ -1,7 +1,7 @@
 import { Pagination } from "@mui/material";
 import { Grid } from "@mui/system";
 import { PopularMoviesMapped } from "../../../services/fetchPopularMovies";
-import PopularMovieCardDetails from "../PopularMovieDetails/PopularMovieDetails";
+import PopularMovieCardDetails from "../popularMovieDetails/PopularMovieDetails";
 
 type PopularMoviesCardsProps = {
   page: number;

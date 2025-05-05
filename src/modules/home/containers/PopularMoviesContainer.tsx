@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import PopularMoviesCards from "../components/popularMoviesSection/PopularMoviesCards/PopularMoviesCards";
+import PopularMoviesCards from "../components/popularMoviesSection/popularMoviesCards/PopularMoviesCards";
 import usePopularMovies from "../hooks/usePopularMovies";
 
 function PopularMoviesContainer() {
