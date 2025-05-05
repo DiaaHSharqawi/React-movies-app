@@ -45,13 +45,20 @@ export const fetchPopularMovies = async ({
   page = 1,
 }: {
   page: number;
-}): Promise<Array<PopularMoviesMapped>> => {
+}): Promise<{
+  popularMoviesMapping: Array<PopularMoviesMapped>;
+  totalPages: number;
+}> => {
   const response = await API.get(`/movie/popular?&page=${page}`);
+  console.log(response);
+
+  // const totalPages: number = response.data["total_pages"];
+  const totalPages: number = 500; // Due to an error from backend I will make it constant
 
   const { results: popularopularMoviesResponse }: PopularMoviesAPIResponse =
     response.data;
 
-  const popularopularMoviesMapping: Array<PopularMoviesMapped> =
+  const popularMoviesMapping: Array<PopularMoviesMapped> =
     popularopularMoviesResponse.map((movie) => {
       return objectMapper.merge(
         movie,
@@ -60,6 +67,6 @@ export const fetchPopularMovies = async ({
       ) as PopularMoviesMapped;
     });
 
-  console.log(popularopularMoviesMapping);
-  return popularopularMoviesMapping;
+  console.log(popularMoviesMapping);
+  return { popularMoviesMapping, totalPages };
 };

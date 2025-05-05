@@ -3,16 +3,22 @@ import { StyledPagination } from "./Pagination.style";
 
 type PaginationProps = {
   page: number;
-  handlePageChange: { (page: number): void };
+  totalPages: number;
+  handlePageChange: (value: number) => void;
 };
 
-function Pagination({ page, handlePageChange }: PaginationProps) {
+function CustomPagination({
+  page,
+  totalPages,
+  handlePageChange,
+}: PaginationProps) {
   return (
     <StyledPagination
       size="large"
       shape="rounded"
       variant="outlined"
-      count={10}
+      count={totalPages}
+      boundaryCount={1}
       page={page}
       onChange={(_, value) => handlePageChange(value)}
       renderItem={(item) => (
@@ -22,4 +28,4 @@ function Pagination({ page, handlePageChange }: PaginationProps) {
   );
 }
 
-export default Pagination;
+export default CustomPagination;

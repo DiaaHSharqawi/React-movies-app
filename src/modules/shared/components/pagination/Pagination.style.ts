@@ -1,7 +1,7 @@
-import { Pagination, PaginationItem, PaginationProps } from "@mui/material";
+import { Pagination, PaginationItem } from "@mui/material";
 import { styled } from "@mui/system";
 
-export const StyledPagination = styled(Pagination)<PaginationProps>(() => ({
+export const StyledPagination = styled(Pagination)(() => ({
   padding: "24px",
   margin: "16px",
   display: "flex",

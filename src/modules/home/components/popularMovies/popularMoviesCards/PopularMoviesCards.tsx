@@ -1,13 +1,22 @@
 import { Grid } from "@mui/system";
 import Loader from "../../../../shared/components/loader/Loader";
-import Pagination from "../../../../shared/components/pagination/Pagination";
-import { PopularMoviesMapped } from "../../../services/fetchPopularMovies";
+import Pagination from "../../../../shared/components/pagination/CustomPagination";
 import PopularMovieCardDetails from "../popularMovieDetails/PopularMovieDetails";
+
+type PopularMovies = {
+  id: number;
+  backdropPath: string;
+  title: string;
+  voteAverage: number;
+  video: boolean;
+  releaseDate: string;
+};
 
 type PopularMoviesCardsProps = {
   page: number;
+  totalPages: number;
   handlePageChange: { (page: number): void };
-  popularMovies: PopularMoviesMapped[] | undefined;
+  popularMovies: PopularMovies[] | undefined;
   isLoading: boolean;
 };
 
@@ -16,6 +25,7 @@ function PopularMoviesCards({
   isLoading,
   handlePageChange,
   page,
+  totalPages,
 }: PopularMoviesCardsProps) {
   if (isLoading) {
     return <Loader />;
@@ -33,14 +43,25 @@ function PopularMoviesCards({
         >
           {popularMovies.map((popularMovie) => {
             return (
-              <Grid size={3} key={popularMovie.id}>
+              <Grid
+                size={{
+                  xs: 10,
+                  sm: 6,
+                  md: 3,
+                }}
+                key={popularMovie.id}
+              >
                 <PopularMovieCardDetails popularMovie={popularMovie} />
               </Grid>
             );
           })}
 
           {popularMovies && (
-            <Pagination page={page} handlePageChange={handlePageChange} />
+            <Pagination
+              totalPages={totalPages}
+              page={page}
+              handlePageChange={handlePageChange}
+            />
           )}
         </Grid>
       )}
