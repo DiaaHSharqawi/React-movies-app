@@ -25,7 +25,7 @@ type TrendingMoviesAPIResponse = {
   results: Array<TrendingMovies>;
 };
 
-export type TrendingMoviesMapped = {
+type TrendingMoviesMapped = {
   id: number;
   backdropPath: string;
   title: string;

@@ -1,16 +1,23 @@
 import SlideshowIcon from "@mui/icons-material/Slideshow";
-import { Button } from "@mui/material";
 import { TMDB_IMAGE_BASE_URL } from "../../../../shared/constants";
-import { TrendingMoviesMapped } from "../../../services/fetchTrendingMovies";
 import {
   DarkOverlayContainer,
   StyledTypography,
+  StyledWatchNowButton,
   TrendingMovieDetailContainer,
   TrendingMovieSlideContainer,
 } from "./HeroTrendingMovieSlide.style";
 
+type TrendingMovieSlide = {
+  id: number;
+  backdropPath: string;
+  title: string;
+  voteAverage: number;
+  video: boolean;
+  releaseDate: string;
+};
 type HeroTrendingMovieSlideProps = {
-  trendingMovieSlide: TrendingMoviesMapped;
+  trendingMovieSlide: TrendingMovieSlide;
 };
 
 function HeroTrendingMovieSlide({
@@ -26,23 +33,17 @@ function HeroTrendingMovieSlide({
             <StyledTypography variant="h3" component="h1">
               {trendingMovieSlide.title}
             </StyledTypography>
-
             <StyledTypography variant="h4" component="span">
               {trendingMovieSlide.releaseDate}
             </StyledTypography>
-
-            <Button
-              sx={{
-                width: 1 / 4,
-                p: 2,
-              }}
+            <StyledWatchNowButton
               variant="contained"
               color="primary"
               size="large"
               startIcon={<SlideshowIcon />}
             >
               Watch now !
-            </Button>
+            </StyledWatchNowButton>
           </TrendingMovieDetailContainer>
         </DarkOverlayContainer>
       </TrendingMovieSlideContainer>

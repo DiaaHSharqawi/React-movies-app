@@ -1,20 +1,20 @@
-import { Typography } from "@mui/material";
-import { Box, BoxProps, Stack, styled, TypographyProps } from "@mui/system";
+import { Button, Typography } from "@mui/material";
+import { Box, Stack, styled } from "@mui/system";
 import { ElementType } from "react";
 
-type TrendingMovieSlideContainerProps = BoxProps & {
+type TrendingMovieSlideContainerProps = {
   backdropPath: string;
 };
 
-export const TrendingMovieSlideContainer = styled(
-  Box
-)<TrendingMovieSlideContainerProps>(({ backdropPath }) => ({
+const shouldForwardProp = (prop: string) => prop !== "backdropPath";
+
+export const TrendingMovieSlideContainer = styled(Box, {
+  shouldForwardProp: shouldForwardProp,
+})<TrendingMovieSlideContainerProps>(({ backdropPath }) => ({
   position: "relative",
   height: "80vh",
   maxWidth: "100vw",
-  background: `url(${backdropPath}) 
-    no-repeat
-     center / cover `,
+  background: `url(${backdropPath}) no-repeat center / cover`,
   backgroundPosition: "50% 20%",
   borderRadius: "1rem",
   margin: "16px",
@@ -36,11 +36,17 @@ export const TrendingMovieDetailContainer = styled(Stack)(() => ({
   alignItems: "center",
 }));
 
-type StyledTypographyProps = TypographyProps & {
+type StyledTypographyProps = {
   component?: ElementType;
 };
+
 export const StyledTypography = styled(Typography)<StyledTypographyProps>(
   () => ({
     color: "white",
   })
 );
+
+export const StyledWatchNowButton = styled(Button)(() => ({
+  width: "20rem",
+  padding: "16px",
+}));

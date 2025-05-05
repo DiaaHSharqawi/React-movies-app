@@ -1,14 +1,7 @@
-import {
-  Pagination,
-  PaginationItem,
-  PaginationItemProps,
-  PaginationProps,
-} from "@mui/material";
+import { Pagination, PaginationItem, PaginationProps } from "@mui/material";
 import { styled } from "@mui/system";
 
-type StyledPagination = PaginationProps;
-
-export const StyledPagination = styled(Pagination)<StyledPagination>(() => ({
+export const StyledPagination = styled(Pagination)<PaginationProps>(() => ({
   padding: "24px",
   margin: "16px",
   display: "flex",
@@ -24,21 +17,26 @@ export const StyledPagination = styled(Pagination)<StyledPagination>(() => ({
   },
 }));
 
-type StyledPaginationItemProps = PaginationItemProps & {
+type StyledPaginationItemProps = {
   isItemSelected: boolean;
   itemPage: number;
   currentPage: number;
 };
 
-export const StyledPaginationItem = styled(PaginationItem)(
-  ({ isItemSelected, itemPage, currentPage }: StyledPaginationItemProps) => ({
-    width: "100%",
-    color: isItemSelected ? "#000" : "#fff",
-    backgroundColor: isItemSelected ? "#13afe9" : "#083c84",
-    gap: "100%",
-    "&:hover": {
-      backgroundColor: itemPage === currentPage ? "#0b7ec4" : "#d1d1d1",
-      color: isItemSelected ? "#fff" : "#000",
-    },
-  })
-);
+const StyledPaginationKeys = ["isItemSelected", "itemPage", "currentPage"];
+
+const shouldForwardProp = (props: string) =>
+  !StyledPaginationKeys.includes(props);
+
+export const StyledPaginationItem = styled(PaginationItem, {
+  shouldForwardProp: shouldForwardProp,
+})(({ isItemSelected, itemPage, currentPage }: StyledPaginationItemProps) => ({
+  width: "100%",
+  color: isItemSelected ? "#000" : "#fff",
+  backgroundColor: isItemSelected ? "#13afe9" : "#083c84",
+  gap: "100%",
+  "&:hover": {
+    backgroundColor: itemPage === currentPage ? "#0b7ec4" : "#d1d1d1",
+    color: isItemSelected ? "#fff" : "#000",
+  },
+}));

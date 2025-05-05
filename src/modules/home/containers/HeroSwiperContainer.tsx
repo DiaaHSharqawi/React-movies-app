@@ -10,10 +10,10 @@ function HeroSwiperContainer() {
   const [timeWindow] = useState<TrendingMoviesTyle>("day");
   const { isLoading, data: trendingMovies } = useTrendingMovies(timeWindow);
 
-  console.log(trendingMovies);
   if (isLoading) {
     return <Loader />;
   }
+
   return (
     <>
       {trendingMovies && (

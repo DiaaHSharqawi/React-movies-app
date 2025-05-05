@@ -23,7 +23,7 @@ type PopularMoviesAPIResponse = {
   results: Array<PopularMovies>;
 };
 
-export type PopularMoviesMapped = {
+type PopularMoviesMapped = {
   id: number;
   backdropPath: string;
   title: string;

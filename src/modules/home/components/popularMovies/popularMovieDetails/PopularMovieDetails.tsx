@@ -2,7 +2,6 @@ import { Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 
 import { TMDB_IMAGE_BASE_URL } from "../../../../shared/constants";
-import { PopularMoviesMapped } from "../../../services/fetchPopularMovies";
 import {
   PopularMovieCardDetailsContainer,
   StyledDateRangeIcon,
@@ -11,8 +10,17 @@ import {
   StyledStarIcon,
 } from "./PopularMovieCardDetails.styles";
 
+export type PopularMovies = {
+  id: number;
+  backdropPath: string;
+  title: string;
+  voteAverage: number;
+  video: boolean;
+  releaseDate: string;
+};
+
 type PopularMovieCardDetailsProps = {
-  popularMovie: PopularMoviesMapped;
+  popularMovie: PopularMovies;
 };
 
 function PopularMovieCardDetails({

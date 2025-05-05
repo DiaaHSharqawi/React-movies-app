@@ -1,11 +1,19 @@
 import { Navigation, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TrendingMoviesMapped } from "../../../services/fetchTrendingMovies";
 import HeroTrendingMovieSlide from "../heroTrendingMovieSlide/HeroTrendingMovieSlide";
 import "./heroSwiper.module.css";
 
+type TrendingMovies = {
+  id: number;
+  backdropPath: string;
+  title: string;
+  voteAverage: number;
+  video: boolean;
+  releaseDate: string;
+};
+
 type HeroSwiperProps = {
-  trendingMovies: TrendingMoviesMapped[];
+  trendingMovies: TrendingMovies[];
 };
 
 function HeroSwiper({ trendingMovies }: HeroSwiperProps) {
@@ -15,7 +23,7 @@ function HeroSwiper({ trendingMovies }: HeroSwiperProps) {
         slidesPerView={1}
         spaceBetween={15}
         virtual={true}
-        navigation={{}}
+        navigation
         modules={[Navigation, Virtual]}
         className="mySwiper"
         effect="slide"
