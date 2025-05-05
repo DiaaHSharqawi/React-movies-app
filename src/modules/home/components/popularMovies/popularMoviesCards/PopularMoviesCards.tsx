@@ -1,6 +1,6 @@
-import { Pagination } from "@mui/material";
 import { Grid } from "@mui/system";
 import Loader from "../../../../shared/components/loader/Loader";
+import Pagination from "../../../../shared/components/pagination/Pagination";
 import { PopularMoviesMapped } from "../../../services/fetchPopularMovies";
 import PopularMovieCardDetails from "../popularMovieDetails/PopularMovieDetails";
 
@@ -29,9 +29,7 @@ function PopularMoviesCards({
           justifyContent={"center"}
           alignItems={"center"}
           spacing={6}
-          sx={{
-            width: 1,
-          }}
+          width={1}
         >
           {popularMovies.map((popularMovie) => {
             return (
@@ -40,15 +38,11 @@ function PopularMoviesCards({
               </Grid>
             );
           })}
-        </Grid>
-      )}
 
-      {popularMovies && (
-        <Pagination
-          count={10}
-          page={page}
-          onChange={(_, value) => handlePageChange(value)}
-        />
+          {popularMovies && (
+            <Pagination page={page} handlePageChange={handlePageChange} />
+          )}
+        </Grid>
       )}
     </>
   );

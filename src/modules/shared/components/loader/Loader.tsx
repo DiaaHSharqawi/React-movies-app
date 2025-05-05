@@ -1,18 +1,11 @@
-import { Stack } from "@mui/system";
 import { BeatLoader } from "react-spinners";
+import { StyledLoader } from "./Loader.style";
 
 function Loader() {
   return (
-    <Stack
-      sx={{
-        width: 1,
-        height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <StyledLoader>
       <BeatLoader size={25} color="#083c84" />
-    </Stack>
+    </StyledLoader>
   );
 }
 

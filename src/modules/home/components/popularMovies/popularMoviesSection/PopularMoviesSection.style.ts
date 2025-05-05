@@ -4,7 +4,7 @@ import { Box, BoxProps, styled } from "@mui/system";
 export const StyledPopularMoviesSection = styled(Box)<BoxProps>(() => ({
   height: "80vh",
   width: "100%",
-  padding: "3rem",
+  padding: "4rem",
 }));
 
 export const StyledDivider = styled(Divider)(() => ({
