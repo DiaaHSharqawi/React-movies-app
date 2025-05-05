@@ -39,6 +39,6 @@ export const PopularMoviesMapper = {
 };
 
 export type FetchPopularMoviesProps = {
-  popularMoviesMapping: Array<PopularMoviesMapped>;
+  popularMovies: Array<PopularMoviesMapped>;
   totalPages: number;
 };

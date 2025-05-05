@@ -35,5 +35,5 @@ export const fetchPopularMovies = async ({
     });
 
   console.log(popularMoviesMapping);
-  return { popularMoviesMapping, totalPages };
+  return { popularMovies: popularMoviesMapping, totalPages };
 };

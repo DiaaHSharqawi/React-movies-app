@@ -30,7 +30,7 @@ type SpokenLanguages = {
   name: string;
 };
 
-export type MovieDetails = {
+export type MovieDetailsAPIResponse = {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;
@@ -57,8 +57,4 @@ export type MovieDetails = {
   video: boolean;
   vote_average: number;
   vote_count: number;
-};
-
-export type MovieDetailsAPIResponse = {
-  results: Array<MovieDetails>;
 };

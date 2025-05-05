@@ -1,5 +1,4 @@
 import { Grid } from "@mui/system";
-import Loader from "../../../../shared/components/loader/Loader";
 import Pagination from "../../../../shared/components/pagination/CustomPagination";
 import PopularMovieCardDetails from "../popularMovieDetails/PopularMovieDetails";
 
@@ -17,20 +16,14 @@ type PopularMoviesCardsProps = {
   totalPages: number;
   handlePageChange: { (page: number): void };
   popularMovies: PopularMovies[] | undefined;
-  isLoading: boolean;
 };
 
 function PopularMoviesCards({
   popularMovies,
-  isLoading,
   handlePageChange,
   page,
   totalPages,
 }: PopularMoviesCardsProps) {
-  if (isLoading) {
-    return <Loader />;
-  }
-
   return (
     <>
       {popularMovies && (
