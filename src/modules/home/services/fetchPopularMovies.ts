@@ -41,10 +41,12 @@ const PopularMoviesMapper = {
   release_date: "releaseDate",
 };
 
-export const fetchPopularMovies = async (): Promise<
-  Array<PopularMoviesMapped>
-> => {
-  const response = await API.get(`/movie/popular`);
+export const fetchPopularMovies = async ({
+  page = 1,
+}: {
+  page: number;
+}): Promise<Array<PopularMoviesMapped>> => {
+  const response = await API.get(`/movie/popular?&page=${page}`);
 
   const { results: popularopularMoviesResponse }: PopularMoviesAPIResponse =
     response.data;
