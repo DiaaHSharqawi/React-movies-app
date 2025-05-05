@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import Loader from "../../shared/components/loader/Loader";
 import PopularMoviesCards from "../components/popularMovies/popularMoviesCards/PopularMoviesCards";
 import usePopularMovies from "../hooks/usePopularMovies";
 
@@ -9,10 +8,6 @@ function PopularMoviesContainer() {
   const handlePageChange = useCallback((page: number) => {
     setPage(page);
   }, []);
-
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <>

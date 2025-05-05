@@ -1,5 +1,6 @@
 import { Pagination } from "@mui/material";
 import { Grid } from "@mui/system";
+import Loader from "../../../../shared/components/loader/Loader";
 import { PopularMoviesMapped } from "../../../services/fetchPopularMovies";
 import PopularMovieCardDetails from "../popularMovieDetails/PopularMovieDetails";
 
@@ -17,7 +18,7 @@ function PopularMoviesCards({
   page,
 }: PopularMoviesCardsProps) {
   if (isLoading) {
-    return <h1> Loading....</h1>;
+    return <Loader />;
   }
 
   return (
