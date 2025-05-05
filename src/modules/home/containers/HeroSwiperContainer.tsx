@@ -4,10 +4,10 @@ import Loader from "../../shared/components/loader/Loader";
 import HeroSwiper from "../components/hero/heroSwiper/HeroSwiper";
 import useTrendingMovies from "../hooks/useTrendingMovies";
 
-type TrendingMoviesTyle = "day" | "week";
+type TrendingMoviesType = "day" | "week";
 
 function HeroSwiperContainer() {
-  const [timeWindow] = useState<TrendingMoviesTyle>("day");
+  const [timeWindow] = useState<TrendingMoviesType>("day");
   const { isLoading, data: trendingMovies } = useTrendingMovies(timeWindow);
 
   if (isLoading) {

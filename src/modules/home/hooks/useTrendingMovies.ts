@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchTrendingMovies } from "../services/fetchTrendingMovies";
+import { fetchTrendingMovies } from "../services/fetchTrendingMovies/fetchTrendingMovies";
 
 type UseTrendingMoviesTyle = "day" | "week";
 

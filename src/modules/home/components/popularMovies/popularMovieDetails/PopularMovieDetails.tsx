@@ -10,7 +10,7 @@ import {
   StyledStarIcon,
 } from "./PopularMovieCardDetails.styles";
 
-export type PopularMovies = {
+type PopularMovies = {
   id: number;
   backdropPath: string;
   title: string;
