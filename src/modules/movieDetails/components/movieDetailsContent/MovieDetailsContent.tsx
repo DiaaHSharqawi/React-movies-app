@@ -10,12 +10,12 @@ function MovieDetailsContent({
   return (
     <Grid
       container
-      spacing={6}
+      spacing={5}
       sx={{
         height: 1,
       }}
     >
-      <Grid size={8}>
+      <Grid size={7}>
         <Grid
           container
           spacing={{
@@ -131,13 +131,14 @@ function MovieDetailsContent({
       <Grid
         size={{
           sm: 12,
-          md: 4,
+          md: 5,
         }}
       >
         <img
           src={`${TMDB_IMAGE_BASE_URL}/${movieDetails.backdrop_path}`}
           style={{
-            height: "520px",
+            height: "650px",
+            objectFit: "cover",
             maxWidth: "100%",
             borderRadius: "3rem",
           }}
