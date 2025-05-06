@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import { Stack } from "@mui/system";
-
 import { useNavigate } from "react-router";
 import { TMDB_IMAGE_BASE_URL } from "../../../../shared/constants";
 import {
@@ -29,7 +28,6 @@ function PopularMovieCardDetails({
 }: PopularMovieCardDetailsProps) {
   const releaseDate = popularMovie.releaseDate.split("-")[0];
   const popularMovieBackdropUrl = `${TMDB_IMAGE_BASE_URL}/${popularMovie.backdropPath}`;
-
   const navigate = useNavigate();
   const handleNavigate = (movieId: string) => {
     navigate(`/movie/${movieId}`);

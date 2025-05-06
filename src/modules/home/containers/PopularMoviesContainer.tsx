@@ -1,16 +1,20 @@
 import { Alert } from "@mui/material";
-import { useCallback, useState } from "react";
+import { useContext, useEffect } from "react";
 import Loader from "../../shared/components/loader/Loader";
 import PopularMoviesCards from "../components/popularMovies/popularMoviesCards/PopularMoviesCards";
+import { PageContext } from "../contexts/pageContext/PageContext";
 import usePopularMovies from "../hooks/usePopularMovies";
 
 function PopularMoviesContainer() {
-  const [page, setPage] = useState(1);
-  const handlePageChange = useCallback((page: number) => {
-    setPage(page);
-  }, []);
-
+  const { page, totalPages, setTotalPages } = useContext(PageContext);
   const { isLoading, isError, data } = usePopularMovies(page);
+
+  useEffect(() => {
+    if (data) {
+      console.log(`Use effect total pages :${data.totalPages}`);
+      setTotalPages(data.totalPages);
+    }
+  }, [setTotalPages, data]);
 
   if (isLoading) {
     return <Loader />;
@@ -22,19 +26,12 @@ function PopularMoviesContainer() {
     return <Alert severity="warning">No data available</Alert>;
   }
 
-  const { popularMovies, totalPages } = data;
+  const { popularMovies } = data;
   const isDataAvailable = popularMovies.length > 0 && totalPages > 0;
 
   return (
     <>
-      {isDataAvailable && (
-        <PopularMoviesCards
-          popularMovies={popularMovies}
-          page={page}
-          totalPages={totalPages}
-          handlePageChange={handlePageChange}
-        />
-      )}
+      {isDataAvailable && <PopularMoviesCards popularMovies={popularMovies} />}
     </>
   );
 }

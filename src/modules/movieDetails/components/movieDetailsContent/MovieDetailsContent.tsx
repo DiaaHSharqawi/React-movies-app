@@ -16,9 +16,20 @@ function MovieDetailsContent({
       }}
     >
       <Grid size={8}>
-        <Grid container spacing={4}>
+        <Grid
+          container
+          spacing={{
+            md: 4,
+            sm: 2,
+          }}
+        >
           {/** For header title*/}
-          <Grid size={8}>
+          <Grid
+            size={{
+              md: 8,
+              sm: 12,
+            }}
+          >
             <Typography color="primary" variant="h4" component="h1">
               {movieDetails.title}
             </Typography>
@@ -44,7 +55,12 @@ function MovieDetailsContent({
 
           {/** Geners */}
           <Grid container size={12}>
-            <Grid size={3.5}>
+            <Grid
+              size={{
+                md: 3.5,
+                xs: 12,
+              }}
+            >
               <Typography
                 variant="h6"
                 component="span"
@@ -112,7 +128,12 @@ function MovieDetailsContent({
           </Grid>
         </Grid>
       </Grid>
-      <Grid size={4}>
+      <Grid
+        size={{
+          sm: 12,
+          md: 4,
+        }}
+      >
         <img
           src={`${TMDB_IMAGE_BASE_URL}/${movieDetails.backdrop_path}`}
           style={{

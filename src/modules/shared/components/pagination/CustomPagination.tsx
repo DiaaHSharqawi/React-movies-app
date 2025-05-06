@@ -1,17 +1,11 @@
+import { useContext } from "react";
+import { PageContext } from "../../../home/contexts/pageContext/PageContext";
 import CustomPaginationItem from "./CustomPaginationItem";
 import { StyledPagination } from "./Pagination.style";
 
-type PaginationProps = {
-  page: number;
-  totalPages: number;
-  handlePageChange: (value: number) => void;
-};
+function CustomPagination() {
+  const { page, totalPages, handlePageChange } = useContext(PageContext);
 
-function CustomPagination({
-  page,
-  totalPages,
-  handlePageChange,
-}: PaginationProps) {
   return (
     <StyledPagination
       size="large"

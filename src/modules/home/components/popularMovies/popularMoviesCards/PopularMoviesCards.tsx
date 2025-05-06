@@ -12,18 +12,10 @@ type PopularMovies = {
 };
 
 type PopularMoviesCardsProps = {
-  page: number;
-  totalPages: number;
-  handlePageChange: { (page: number): void };
   popularMovies: PopularMovies[] | undefined;
 };
 
-function PopularMoviesCards({
-  popularMovies,
-  handlePageChange,
-  page,
-  totalPages,
-}: PopularMoviesCardsProps) {
+function PopularMoviesCards({ popularMovies }: PopularMoviesCardsProps) {
   return (
     <>
       {popularMovies && (
@@ -49,13 +41,7 @@ function PopularMoviesCards({
             );
           })}
 
-          {popularMovies && (
-            <Pagination
-              totalPages={totalPages}
-              page={page}
-              handlePageChange={handlePageChange}
-            />
-          )}
+          {popularMovies && <Pagination />}
         </Grid>
       )}
     </>

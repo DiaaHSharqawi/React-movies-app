@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import PopularMoviesContainer from "../../../containers/PopularMoviesContainer";
+import { PageProvider } from "../../../contexts/pageContext/PageProvider";
 import {
   StyledDivider,
   StyledPopularMoviesSection,
@@ -13,7 +14,9 @@ function PopularMoviesSection() {
           Popular Movies
         </Typography>
         <StyledDivider />
-        <PopularMoviesContainer />
+        <PageProvider>
+          <PopularMoviesContainer />
+        </PageProvider>
       </StyledPopularMoviesSection>
     </>
   );
