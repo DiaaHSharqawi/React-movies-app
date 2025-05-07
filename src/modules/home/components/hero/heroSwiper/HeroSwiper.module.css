@@ -1,6 +1,6 @@
 :root {
-  --swiper-theme-color: #fff;
-  --swiper-navigation-sides-offset: 3em;
+  --swiper-theme-color: #fff !important;
+  --swiper-navigation-sides-offset: 3em !important;
 }
 
 .swiper-button-prev {
