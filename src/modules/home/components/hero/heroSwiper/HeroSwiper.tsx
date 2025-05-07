@@ -1,7 +1,7 @@
 import { Navigation, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeroTrendingMovieSlide from "../heroTrendingMovieSlide/HeroTrendingMovieSlide";
-import "./HeroSwiper.module.css";
+import "./HeroSwiper.css";
 
 type TrendingMovies = {
   id: number;
